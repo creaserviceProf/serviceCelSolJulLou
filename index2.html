@@ -57,7 +57,7 @@
       left: 5%; 
       transform: translateX(-20%) translateY(20%) scale(0.6);
       transform-origin: bottom center;
-      z-index: 5; /* Ensure the overlay is behind the hero text box */
+      z-index: 5; /* Makes sure the overlay is behind the hero text box */
     }
     .overlay-container img {
       width: auto; /* Maintain natural width unless scaling is needed */
@@ -103,6 +103,20 @@
       border-radius: 5px;
       font-size: 14px;
       cursor: pointer;
+    }
+
+    /* Media Query for Smaller Screens (Smartphones) */
+    @media (max-width: 480px) {
+      .overlay-container {
+        top: -20%; /* Move the car image higher on the page */
+        left: 10%; /* Adjust left positioning to center it more comfortably */
+        transform: translateX(-10%) translateY(10%) scale(0.4); /* Make the image smaller (40% of original size) */
+      }
+
+      .hero h1 {
+        font-size: 1rem; /* Reduce the font size slightly for better mobile readability */
+        bottom: 60px; /* Adjust positioning to fit smaller screens */
+      }
     }
 
   </style>
