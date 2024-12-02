@@ -50,13 +50,14 @@
       height: 100%;
       object-fit: cover;
     }
-    .hero img.overlay {
-      position: absolute;
-      bottom: 0px; /* Distance from the bottom */
-      left: 10px; /* Distance from the left */
-      width: 70%; /* Responsive size */
-      max-width: 200px; /* Maximum size */
-    }
+.hero img.overlay {
+  position: absolute;
+  bottom: 0px; /* Distance from the bottom */
+  left: 10px; /* Distance from the left */
+  transform: scale(0.7); /* Scale to 70% of original size */
+  transform-origin: bottom left; /* Keeps the positioning consistent */
+}
+
     .hero h1 {
       position: absolute;
       bottom: 80px;
