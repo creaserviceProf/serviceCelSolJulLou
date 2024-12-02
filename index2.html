@@ -19,6 +19,7 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      position: relative; /* Ensure hero and overlay align correctly */
     }
     header {
       display: flex;
@@ -50,13 +51,18 @@
       height: 100%;
       object-fit: cover;
     }
-.hero img.overlay {
-  position: absolute;
-  bottom: 0%; /* Adjust the value to control how much of the image is outside */
-  left: 0%; /* Center the car horizontally */
-  transform: translateX(-10%) translateY(20%) scale(0.7); /* Move it back to center and scale to 70% */
-  transform-origin: bottom center; /* Keeps the positioning consistent from bottom */
-}
+    .overlay-container {
+      position: absolute;
+      bottom: -10%; /* Adjust this value as needed to match the desired positioning */
+      left: 0%; 
+      transform: translateX(-10%) translateY(20%) scale(0.7);
+      transform-origin: bottom center;
+      z-index: 10; /* Makes sure the overlay is above the hero section */
+    }
+    .overlay-container img {
+      width: auto; /* Maintain natural width unless scaling is needed */
+      height: auto; /* Maintain natural height unless scaling is needed */
+    }
 
     .hero h1 {
       position: absolute;
@@ -101,11 +107,10 @@
       .hero {
         height: 40vh; /* Adjust hero height for tablets and smaller screens */
       }
-      .hero img.overlay {
-  bottom: 0%; /* Adjust the value to control how much of the image is outside */
-  left: 0%; /* Center the car horizontally */
-  transform: translateX(-20%) translateY(20%) scale(0.6); /* Move it back to center and scale to 70% */
-  transform-origin: bottom center; /* Keeps the positioning consistent from bottom */
+      .overlay-container {
+        bottom: -20%;
+        left: 0%; 
+        transform: translateX(-20%) translateY(20%) scale(0.6);
       }
       .hero h1 {
         bottom: 60px;
@@ -125,11 +130,10 @@
         bottom: 40px;
         left: 10px;
       }
-      .hero img.overlay {
-  bottom: 0%; /* Adjust the value to control how much of the image is outside */
-  left: 0%; /* Center the car horizontally */
-  transform: translateX(-20%) translateY(20%) scale(0.6); /* Move it back to center and scale to 70% */
-  transform-origin: bottom center; /* Keeps the positioning consistent from bottom */
+      .overlay-container {
+        bottom: -20%;
+        left: 0%; 
+        transform: translateX(-20%) translateY(20%) scale(0.6);
       }
     }
   </style>
@@ -146,14 +150,14 @@
     <div class="hero">
       <!-- Background image -->
       <img src="images/paysage1.JPG" alt="Paysage 1" class="bg">
-      <!-- Overlay car image -->
-      <div>
-      <img src="images/voiture.PNG" alt="Voiture Mobilize"  class="overlay" >
-        </div>
       <!-- Text -->
       <h1>Vers l'infini et au-delà</h1>
     </div>
 
+    <!-- Overlay car image in independent div -->
+    <div class="overlay-container">
+      <img src="images/voiture.PNG" alt="Voiture Mobilize">
+    </div>
 
     <!-- Slow Travel Section -->
     <div class="slow-travel">
