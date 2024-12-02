@@ -52,10 +52,10 @@
     }
 .hero img.overlay {
   position: absolute;
-  top: 80px; /* Distance from the bottom */
-  left: 10px; /* Distance from the left */
-  transform: scale(0.7); /* Scale to 70% of original size */
-  transform-origin: bottom left; /* Keeps the positioning consistent */
+  bottom: -20%; /* Adjust the value to control how much of the image is outside */
+  left: 50%; /* Center the car horizontally */
+  transform: translateX(-50%) scale(0.7); /* Move it back to center and scale to 70% */
+  transform-origin: bottom center; /* Keeps the positioning consistent from bottom */
 }
 
     .hero h1 {
