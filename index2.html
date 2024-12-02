@@ -102,9 +102,10 @@
         height: 40vh; /* Adjust hero height for tablets and smaller screens */
       }
       .hero img.overlay {
-        width: 40%; /* Adjust overlay size for smaller screens */
-        bottom: 5px;
-        left: 5px;
+  bottom: 0%; /* Adjust the value to control how much of the image is outside */
+  left: 0%; /* Center the car horizontally */
+  transform: translateX(-20%) translateY(20%) scale(1.2); /* Move it back to center and scale to 70% */
+  transform-origin: bottom center; /* Keeps the positioning consistent from bottom */
       }
       .hero h1 {
         bottom: 60px;
