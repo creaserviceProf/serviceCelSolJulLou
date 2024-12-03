@@ -53,17 +53,17 @@
     }
     .overlay-container {
       position: absolute;
-      top: -300px; /* Set percentage for continuous movement */
-      left: -20%;
+      top: 10%; /* Keep this position fixed */
+      left: 10%; /* Keep this position fixed */
       z-index: 5; /* Makes sure the overlay is behind the hero text box */
-      transition: all 1s ease-in-out; /* Smooth transition for position and transform */
+      transition: transform 0.5s ease-in-out; /* Add smooth transition for scaling */
     }
     .overlay-container img {
       width: 100%; /* Set initial width to occupy full size of the container */
       height: auto; /* Maintain natural height */
-      transform: scale(0.6); /* Set initial scale */
+      transform: scale(0.8); /* Set initial scale */
       transform-origin: bottom center;
-      transition: all 1s ease-in-out; /* Add smooth transition for transformations */
+      transition: transform 0.5s ease-in-out; /* Smooth scaling effect */
     }
 
     .hero h1 {
@@ -107,18 +107,22 @@
       cursor: pointer;
     }
 
+    /* Media Query for Smaller Screens (Tablets) */
+    @media (max-width: 720px) {
+      .overlay-container img {
+        transform: scale(0.6); /* Adjust scale for smaller screens */
+      }
 
+      .hero h1 {
+        font-size: 1rem; /* Reduce the font size slightly for better mobile readability */
+        bottom: 60px; /* Adjust positioning to fit smaller screens */
+      }
+    }
 
     /* Media Query for Smaller Screens (Smartphones) */
     @media (max-width: 480px) {
-      .overlay-container {
-         /* Adjust top value for smaller screens */
-        left: 20%; /* Center the car image */
-      }
-
       .overlay-container img {
-        transform: translateY(0%) scale(0.6); /* Smoothly scale down and move for smartphone screens */
-        transform-origin: bottom center;
+        transform: scale(0.4); /* Scale down further for smartphone screens */
       }
     }
 
