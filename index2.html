@@ -53,7 +53,7 @@
     }
     .overlay-container {
       position: absolute;
-      top: -15%; /* Set percentage for continuous movement */
+      top: 200px; /* Set percentage for continuous movement */
       left: -20%;
       z-index: 5; /* Makes sure the overlay is behind the hero text box */
       transition: all 1s ease-in-out; /* Smooth transition for position and transform */
@@ -110,7 +110,7 @@
     /* Media Query for Smaller Screens (Tablets) */
     @media (max-width: 720px) {
       .overlay-container {
-        top: -20%; /* Smoothly adjust the top value */
+        top: 90px; /* Smoothly adjust the top value */
         left: 5%; /* Adjust left positioning for a centered effect */
       }
 
@@ -128,7 +128,7 @@
     /* Media Query for Smaller Screens (Smartphones) */
     @media (max-width: 480px) {
       .overlay-container {
-        top: 40%; /* Adjust top value for smaller screens */
+        top: 80px; /* Adjust top value for smaller screens */
         left: 0%; /* Center the car image */
       }
 
